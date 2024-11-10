@@ -1,10 +1,15 @@
+
+import Login from "./components/Auth/Login"
+import EmployeeDashboard from "./components/Dashboard/EmployeeDashboard"
+
 function App() {
 
 
   return (
     <>
 
-  <h2>app</h2>
+     {/* <Login></Login> */}
+     <EmployeeDashboard></EmployeeDashboard>
       
     </>
   )
