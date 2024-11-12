@@ -1,6 +1,6 @@
 
 
-function Taskcounters() {
+function Taskcounters({loggedInUserData}) {
   return (
     <div className="cards mt-10  flex   items-center justify-between screen gap-5">
 

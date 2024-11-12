@@ -2,19 +2,44 @@
 import Login from "./components/Auth/Login"
 import EmployeeDashboard from "./components/Dashboard/EmployeeDashboard"
 import AdminDashboard from "./components/Dashboard/AdminDashboard"
-import { useEffect, useState } from "react"
-import { getLocalStorage, setLocalStorage } from "./utils/Localstorage"
+import { useContext, useEffect, useState } from "react"
+
+import { Authcontext } from "./context/Authprovider"
 function App() {
 
   const[user,setUser]= useState(null)
+  const[loggedInUserData,setloggedInUserData]= useState(null)
+
+ const authData= useContext(Authcontext)
+ 
+//  useEffect(()=>{
+
+//   if(authData){
+//     const loggedInUser =localStorage.getItem("loggedInUser")
+//     if(loggedInUser){
+//       setUser(loggedInUser.role)
+//     }
+
+//   }
+
+//  },[authData])
+  
 
   const handleLogin=(email,password)=>{
       
     if(email=="admin@nafis.com" && password=="123"){
-      setUser('admin')
+      setUser({role:'admin'})
+      localStorage.setItem("loggedInUser",JSON.stringify({role:"admin"}))
     }
-    else if(email=="user@nafis.com" && password=="123"){
-      setUser("employee")
+    else if(authData){
+      const employee= authData.employees.find((e)=> e.email==email && e.password==password)
+      if(employee){
+        setUser({role:"employee"})
+        setloggedInUserData(employee)
+        localStorage.setItem("loggedInUser",JSON.stringify({role:"employee"}))
+      }
+      
+      
     }
     else{
       alert("invalid credential")
@@ -23,20 +48,19 @@ function App() {
 
   }
 
+  
+
 
   return (
     <>
-
-    {
-      !user ? <Login handleLogin={handleLogin} ></Login> : ""
-    }
-
-     {
-          user=='admin' ? <AdminDashboard></AdminDashboard> : <EmployeeDashboard></EmployeeDashboard>
-     }
-     
-      
-    </>
+    {!user ? (
+      <Login handleLogin={handleLogin} />
+    ) : user.role === "admin" ? (
+      <AdminDashboard />
+    ) : user.role === "employee" ? (
+      <EmployeeDashboard loggedInUserData={loggedInUserData} />
+    ) : null}
+  </>
   )
 }
 
