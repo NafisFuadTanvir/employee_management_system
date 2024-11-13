@@ -5,11 +5,12 @@ export const Authcontext=createContext()
 
 const Authprovider = ({children}) => {
 
+
     const[userdata,setuserData]= useState(null)
 
-    setLocalStorage()
+    
     useEffect(()=>{
-
+        setLocalStorage()
         const {employees,admin}= getLocalStorage() //destructuring from localstorage
         setuserData({employees,admin})
     },[])

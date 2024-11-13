@@ -1,18 +1,40 @@
 import React from 'react';
+import Accepttask from './Accepttask';
+import Newtask from './Newtask';
+import Completedtask from './Completedtask';
+import Failedtask from './Failedtask';
 
 const Tasklist = ({loggedInUserData}) => {
     return (
         <div id='tasklist' className='h-[55%] overflow-x-auto flex items-center justify-start gap-5  flex-nowrap w-full mt-10 py-5'>
 
-            <div className='h-full p-5 flex-shrink-0 w-[300px] bg-red-500 rounded-xl'>
-                <div className='flex justify-between px-3'>
-                    <h2 className='bg-red-700 px-2 py-1 rounded text-sm'>High</h2>
-                    <h3 className='text-sm'>20 Feb 2024</h3>
-                </div >
-                <h2 className='mt-4 text-2xl font-semibold'>Make a youtube vedio</h2>
-                <p className='text-sm mt-2'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus ut, blanditiis voluptas expedita ab facere quo harum quidem ipsam eligendi?</p>
+         
+         {
 
-            </div>
+          loggedInUserData.tasks.map((element,index)=>{
+             
+            if(element.active){
+              return <Accepttask key={index} data={element} ></Accepttask>
+            }
+            if(element.Newtask){
+              return <Newtask key={index} data={element} ></Newtask>
+            }
+            if(element.Completedtask){
+              return <Completedtask key={index} data={element} ></Completedtask>
+            }
+            if(element.Failedtask){
+
+              return <Failedtask key={index} data={element} ></Failedtask>
+            }
+
+          })
+         }
+
+           
+          {/* <Accepttask></Accepttask>
+          <Newtask></Newtask>
+          <Completedtask></Completedtask>
+          <Failedtask></Failedtask> */}
             
             
         </div>

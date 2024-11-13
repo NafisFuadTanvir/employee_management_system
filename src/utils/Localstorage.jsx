@@ -2,12 +2,12 @@ const employees = [
   {
     "id": 1,
     "first_name": "John",
-    "email": "employee1@example.com",
+    "email": "e1@e.com",
     "password": "123",
     "tasks": [
       {
         "active": true,
-        "new_task": true,
+        "newTask": true,
         "completed": false,
         "failed": false,
         "task_title": "Develop Login Page",
@@ -17,7 +17,7 @@ const employees = [
       },
       {
         "active": true,
-        "new_task": false,
+        "newTask": false,
         "completed": false,
         "failed": false,
         "task_title": "Debug User Dashboard",
@@ -27,7 +27,7 @@ const employees = [
       },
       {
         "active": false,
-        "new_task": false,
+        "newTask": false,
         "completed": true,
         "failed": false,
         "task_title": "Code Review",
@@ -36,9 +36,9 @@ const employees = [
         "task_category": "Code Review"
       }
     ],
-    "task_count": [
+    "taskCount": [
       { "active": 2 },
-      { "new_task": 1 },
+      { "newTask": 1 },
       { "completed": 1 },
       { "failed": 0 }
     ]
@@ -51,7 +51,7 @@ const employees = [
     "tasks": [
       {
         "active": true,
-        "new_task": true,
+        "newTask": true,
         "completed": false,
         "failed": false,
         "task_title": "Design User Profile Page",
@@ -61,7 +61,7 @@ const employees = [
       },
       {
         "active": false,
-        "new_task": false,
+        "newTask": false,
         "completed": true,
         "failed": false,
         "task_title": "Optimize Database Queries",
@@ -71,7 +71,7 @@ const employees = [
       },
       {
         "active": true,
-        "new_task": false,
+        "newTask": false,
         "completed": false,
         "failed": false,
         "task_title": "Implement API Integration",
@@ -80,9 +80,9 @@ const employees = [
         "task_category": "Backend Development"
       }
     ],
-    "task_count": [
+    "taskCount": [
       { "active": 2 },
-      { "new_task": 1 },
+      { "newTask": 1 },
       { "completed": 1 },
       { "failed": 0 }
     ]
@@ -95,7 +95,7 @@ const employees = [
     "tasks": [
       {
         "active": true,
-        "new_task": true,
+        "newTask": true,
         "completed": false,
         "failed": false,
         "task_title": "Conduct Research",
@@ -105,7 +105,7 @@ const employees = [
       },
       {
         "active": false,
-        "new_task": false,
+        "newTask": false,
         "completed": true,
         "failed": false,
         "task_title": "Update Documentation",
@@ -114,9 +114,9 @@ const employees = [
         "task_category": "Documentation"
       }
     ],
-    "task_count": [
+    "taskCount": [
       { "active": 1 },
-      { "new_task": 1 },
+      { "newTask": 1 },
       { "completed": 1 },
       { "failed": 0 }
     ]
@@ -129,7 +129,7 @@ const employees = [
     "tasks": [
       {
         "active": true,
-        "new_task": true,
+        "newTask": true,
         "completed": false,
         "failed": false,
         "task_title": "Implement Chat Feature",
@@ -139,7 +139,7 @@ const employees = [
       },
       {
         "active": false,
-        "new_task": false,
+        "newTask": false,
         "completed": true,
         "failed": false,
         "task_title": "Refactor Codebase",
@@ -149,7 +149,7 @@ const employees = [
       },
       {
         "active": true,
-        "new_task": false,
+        "newTask": false,
         "completed": false,
         "failed": false,
         "task_title": "Test Notification Service",
@@ -158,9 +158,9 @@ const employees = [
         "task_category": "Testing"
       }
     ],
-    "task_count": [
+    "taskCount": [
       { "active": 2 },
-      { "new_task": 1 },
+      { "newTask": 1 },
       { "completed": 1 },
       { "failed": 0 }
     ]
@@ -173,7 +173,7 @@ const employees = [
     "tasks": [
       {
         "active": true,
-        "new_task": true,
+        "newTask": true,
         "completed": false,
         "failed": false,
         "task_title": "Setup CI/CD Pipeline",
@@ -183,7 +183,7 @@ const employees = [
       },
       {
         "active": false,
-        "new_task": false,
+        "newTask": false,
         "completed": true,
         "failed": false,
         "task_title": "Update Security Policies",
@@ -193,7 +193,7 @@ const employees = [
       },
       {
         "active": true,
-        "new_task": false,
+        "newTask": false,
         "completed": false,
         "failed": false,
         "task_title": "Bug Fix on Settings Page",
@@ -202,14 +202,15 @@ const employees = [
         "task_category": "Bug Fixing"
       }
     ],
-    "task_count": [
+    "taskCount": [
       { "active": 2 },
-      { "new_task": 1 },
+      { "newTask": 1 },
       { "completed": 1 },
       { "failed": 0 }
     ]
   }
 ];
+
 
   
 
