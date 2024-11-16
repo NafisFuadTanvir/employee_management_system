@@ -5,6 +5,7 @@ export const Authcontext=createContext()
 
 const Authprovider = ({children}) => {
 
+    localStorage.clear()
 
     const[userdata,setuserData]= useState(null)
 
@@ -16,7 +17,7 @@ const Authprovider = ({children}) => {
     },[])
 
     return (
-        <Authcontext.Provider value={userdata}>
+        <Authcontext.Provider value={{userdata,setuserData}}>
             {children}
         </Authcontext.Provider>
     );

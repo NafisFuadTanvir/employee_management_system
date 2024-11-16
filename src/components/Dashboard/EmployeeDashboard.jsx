@@ -2,16 +2,16 @@ import Tasklist from "../TaskList/Tasklist";
 import Header from "./Header";
 import Taskcounters from "./Taskcounters";
 
-const EmployeeDashboard = ({loggedInUserData}) => {
+const EmployeeDashboard = (props) => {
 
     return (
         <div className="p-10 bg-[#1c1c1c] h-screen">
             
-           <Header loggedInUserData={loggedInUserData}></Header>
+           <Header changeuser={props.changeuser} loggedInUserData={props.loggedInUserData}></Header>
 
-            <Taskcounters loggedInUserData={loggedInUserData}></Taskcounters>
+            <Taskcounters loggedInUserData={props.loggedInUserData}></Taskcounters>
 
-             <Tasklist loggedInUserData={loggedInUserData}></Tasklist>
+             <Tasklist loggedInUserData={props.loggedInUserData}></Tasklist>
         </div>
     );
 };

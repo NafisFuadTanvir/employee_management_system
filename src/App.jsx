@@ -10,7 +10,7 @@ function App() {
   const[user,setUser]= useState(null)
   const[loggedInUserData,setloggedInUserData]= useState(null)
 
- const authData= useContext(Authcontext)
+  const {userdata,setuserData}= useContext(Authcontext)
  
  useEffect(()=>{
   const loggedInUser =localStorage.getItem("loggedInUser")
@@ -31,8 +31,8 @@ function App() {
       setUser({role:'admin'})
       localStorage.setItem("loggedInUser",JSON.stringify({role:"admin"}))
     }
-    else if(authData){
-      const employee= authData.employees.find((e)=> e.email==email && e.password==password)
+    else if(userdata){
+      const employee= userdata.employees.find((e)=> e.email==email && e.password==password)
       if(employee){
         setUser({role:"employee"})
         setloggedInUserData(employee)
@@ -56,9 +56,9 @@ function App() {
     {!user ? (
       <Login handleLogin={handleLogin} />
     ) : user.role === "admin" ? (
-      <AdminDashboard />
+      <AdminDashboard changeuser={setUser} />
     ) : user.role === "employee" ? (
-      <EmployeeDashboard loggedInUserData={loggedInUserData} />
+      <EmployeeDashboard changeuser={setUser} loggedInUserData={loggedInUserData} />
     ) : null}
   </>
   )
